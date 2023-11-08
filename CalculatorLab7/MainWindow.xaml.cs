@@ -23,6 +23,12 @@ namespace CalculatorLab7
         public MainWindow()
         {
             InitializeComponent();
+            
+
         }
-    }
+        private void CalculatorLab7_Load(object sender, EventArgs e)
+        {
+            
+        }
+        }
 }

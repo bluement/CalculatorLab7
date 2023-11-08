@@ -26,7 +26,7 @@
         <Button Content="=" HorizontalAlignment="Left" Height="24" Margin="373,333,0,0" VerticalAlignment="Top" Width="47"/>
         <Button Content="." HorizontalAlignment="Left" Height="24" Margin="328,333,0,0" VerticalAlignment="Top" Width="40"/>
         <Button Content="0" HorizontalAlignment="Left" Height="24" Margin="238,333,0,0" VerticalAlignment="Top" Width="85"/>
-        <Label Content="Label" HorizontalAlignment="Left" Height="52" Margin="238,160,0,0" VerticalAlignment="Top"  Width="182"/>
+        <Label Content="result" x:Name="resbar" Height="52" Margin="0,0,380,217" VerticalAlignment="Bottom"  Width="182" FontFamily="Algerian" HorizontalContentAlignment="Right" HorizontalAlignment="Right"/>
 
     </Grid>
 </Window>
