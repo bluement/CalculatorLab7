@@ -7,9 +7,26 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="238,308,0,0" VerticalAlignment="Top"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="283,308,0,0" VerticalAlignment="Top"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="328,308,0,0" VerticalAlignment="Top"/>
+        <Button Content="1" HorizontalAlignment="Left" Margin="238,308,0,0" VerticalAlignment="Top" Width="40"/>
+        <Button Content="2" HorizontalAlignment="Left" Margin="283,308,0,0" VerticalAlignment="Top" Width="40"/>
+        <Button Content="3" HorizontalAlignment="Left" Margin="328,308,0,0" VerticalAlignment="Top" Width="40"/>
+        <Button Content="6" HorizontalAlignment="Left" Height="22" Margin="328,281,0,0" VerticalAlignment="Top" Width="40"/>
+        <Button Content="4" HorizontalAlignment="Left" Height="22" Margin="238,281,0,0" VerticalAlignment="Top" Width="40"/>
+        <Button Content="5" HorizontalAlignment="Left" Height="22" Margin="283,281,0,0" VerticalAlignment="Top" Width="40"/>
+        <Button Content="9" HorizontalAlignment="Left" Height="25" Margin="328,251,0,0" VerticalAlignment="Top" Width="40"/>
+        <Button Content="8" HorizontalAlignment="Left" Margin="283,251,0,0" VerticalAlignment="Top" Height="25" Width="40"/>
+        <Button Content="7" HorizontalAlignment="Left" Height="23" Margin="238,251,0,0" VerticalAlignment="Top" Width="40"/>
+        <Button Content="%" HorizontalAlignment="Left" Height="29" Margin="328,217,0,0" VerticalAlignment="Top" Width="40"/>
+        <Button Content="+/-" HorizontalAlignment="Left" Height="29" Margin="283,217,0,0" VerticalAlignment="Top" Width="40"/>
+        <Button Content="AC" HorizontalAlignment="Left" Height="29" Margin="238,217,0,0" VerticalAlignment="Top" Width="40"/>
+        <Button Content="/" HorizontalAlignment="Left" Height="29" Margin="373,217,0,0" VerticalAlignment="Top" Width="47"/>
+        <Button Content="*" HorizontalAlignment="Left" Height="25" Margin="373,251,0,0" VerticalAlignment="Top" Width="47"/>
+        <Button Content="-" HorizontalAlignment="Left" Height="22" Margin="373,281,0,0" VerticalAlignment="Top" Width="47"/>
+        <Button Content="+" HorizontalAlignment="Left" Height="20" Margin="373,308,0,0" VerticalAlignment="Top" Width="47"/>
+        <Button Content="=" HorizontalAlignment="Left" Height="24" Margin="373,333,0,0" VerticalAlignment="Top" Width="47"/>
+        <Button Content="." HorizontalAlignment="Left" Height="24" Margin="328,333,0,0" VerticalAlignment="Top" Width="40"/>
+        <Button Content="0" HorizontalAlignment="Left" Height="24" Margin="238,333,0,0" VerticalAlignment="Top" Width="85"/>
+        <Label Content="Label" HorizontalAlignment="Left" Height="52" Margin="238,160,0,0" VerticalAlignment="Top"  Width="182"/>
 
     </Grid>
 </Window>
