@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:CalculatorLab7"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="300">
-    <Grid ShowGridLines="True">
+    <Grid>
         <Grid.ColumnDefinitions >
             <ColumnDefinition />
             <ColumnDefinition />
@@ -21,27 +21,27 @@
             <RowDefinition />
             <RowDefinition />
         </Grid.RowDefinitions>
-        
-        <Button Content="1" Grid.Row="4" Margin="10"/>
-        <Button Content="2" Grid.Row="4" Grid.Column="1" Margin="10"/>
-        <Button Content="3" Grid.Row="4" Grid.Column="2" Margin="10"/>
-        <Button Content="6" Grid.Row="3" Grid.Column="2" Margin="10"/>
-        <Button Content="4" Grid.Row="3" Margin="10"/>
-        <Button Content="5" Grid.Row="3" Grid.Column="1" Margin="10"/>
-        <Button Content="9" Grid.Row="2" Grid.Column="2" Margin="10"/>
-        <Button Content="8" Grid.Row="2" Grid.Column="1" Margin="10"/>
-        <Button Content="7" Grid.Row="2" Margin="10"/>
-        <Button Content="%" Grid.Row="1" Grid.Column="2" Margin="10"/>
-        <Button Content="+/-" Grid.Row="1" Grid.Column="1" Margin="10"/>
-        <Button Content="AC" Grid.Row="1" Margin="10"/>
-        <Button Content="/" Grid.Row="1" Grid.Column="3" Margin="10"/>
-        <Button Content="*" Grid.Row="2" Grid.Column="3" Margin="10"/>
-        <Button Content="-" Grid.Row="3" Grid.Column="3" Margin="10"/>
-        <Button Content="+" Grid.Row="4" Grid.Column="3" Margin="10"/>
-        <Button Content="=" Grid.Row="5" Grid.Column="3" Margin="10"/>
-        <Button Content="." Grid.Row="5" Grid.Column="2" Margin="10"/>
-        <Button Content="0" Grid.Row="5" Grid.ColumnSpan="2" Margin="10"/>
-        <Label Content="result" x:Name="resbar" Grid.ColumnSpan="4" FontFamily="Algerian" HorizontalContentAlignment="Right"/>
+         <Button Content="0" x:Name="ZeroBtn" Click="NumInput" Grid.Row="5" Grid.ColumnSpan="2" Margin="10"/>
+        <Button Content="1" x:Name="OneBtn" Click="NumInput" Grid.Row="4" Margin="10"/>
+        <Button Content="2" x:Name="TwoBtn" Click="NumInput" Grid.Row="4" Grid.Column="1" Margin="10"/>
+        <Button Content="3" x:Name="ThreeBtn" Click="NumInput" Grid.Row="4" Grid.Column="2" Margin="10"/>
+        <Button Content="4" x:Name="FourBtn" Click="NumInput" Grid.Row="3" Margin="10"/>
+        <Button Content="5" x:Name="FiveBtn" Click="NumInput" Grid.Row="3" Grid.Column="1" Margin="10"/>
+        <Button Content="6" x:Name="SixBtn" Click="NumInput" Grid.Row="3" Grid.Column="2" Margin="10"/>
+        <Button Content="7" x:Name="SevenBtn" Click="NumInput" Grid.Row="2" Margin="10"/>
+        <Button Content="8" x:Name="EightBtn" Click="NumInput" Grid.Row="2" Grid.Column="1" Margin="10"/>
+        <Button Content="9" x:Name="NineBtn" Click="NumInput" Grid.Row="2" Grid.Column="2" Margin="10"/>
+        <Button Content="%" x:Name="percentageButton" Grid.Row="1" Grid.Column="2" Margin="10"/>
+        <Button Content="+/-" x:Name="plusMinusButton" Grid.Row="1" Grid.Column="1" Margin="10"/>
+        <Button Content="AC" x:Name="acButton" Grid.Row="1" Margin="10"/>
+        <Button Content="/" Click="OperationBtnClick" Tag="Division" Grid.Row="1" Grid.Column="3" Margin="10"/>
+        <Button Content="*" Click="OperationBtnClick" Tag="Multiplication" Grid.Row="2" Grid.Column="3" Margin="10"/>
+        <Button Content="-" Click="OperationBtnClick" Tag="Substraction" Grid.Row="3" Grid.Column="3" Margin="10"/>
+        <Button Content="+" Click="OperationBtnClick" Tag="Addition" Grid.Row="4" Grid.Column="3" Margin="10"/>
+        <Button Content="=" x:Name="equalsButton" Grid.Row="5" Grid.Column="3" Margin="10"/>
+        <Button Content="." x:Name="dotButton" Grid.Row="5" Grid.Column="2" Margin="10"/>
+       
+        <Label Content="" x:Name="resbar" Grid.ColumnSpan="4" FontSize="24" FontFamily="Algerian" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom"/>
 
     </Grid>
 </Window>
