@@ -34,89 +34,89 @@ namespace CalculatorLab7
             dotButton.Click += DotButtonClick;
 
 
+
         }  
+
         private void NumInput(object sender, EventArgs e)
         {
             string name = ((Button)sender).Name;
             var input = new ArrayList();
-          
             string output;
-            while (ACButtonClick)
+
+
+            switch (name)
             {
-                switch (name)
-                {
-                    case "ZeroBtn":
-                        input.Add("0");
+                case "ZeroBtn":
+                    input.Add("0");
+                    
+                   output=  string.Join("",input.ToArray()).ToString();
+                    
+                    result = double.Parse(output);
+                    resbar.Content = result;
+                    break;
 
-                        output = string.Join("", input.ToArray()).ToString();
+                case "OneBtn":
+                    input.Add("1");
+                    output = string.Join("", input.ToArray()).ToString();
+                    result = double.Parse(output);
+                    resbar.Content = result;
+                    break;
 
-                        result = double.Parse(output);
-                        resbar.Content = output;
-                        break;
+                case "TwoBtn":
+                    input.Add("2");
+                    output = string.Join("", input.ToArray()).ToString();
+                    result = double.Parse(output);
+                    resbar.Content = output;
+                    break;
 
-                    case "OneBtn":
-                        input.Add("1");
-                        output = string.Join("", input.ToArray()).ToString();
-                        result = double.Parse(output);
-                        resbar.Content = output;
-                        break;
+                case "ThreeBtn":
+                    input.Add("3");
+                    output = string.Join("", input.ToArray()).ToString();
+                    result = double.Parse(output);
+                    resbar.Content = output;
+                    break;
 
-                    case "TwoBtn":
-                        input.Add("2");
-                        output = string.Join("", input);
-                        result = double.Parse(output);
-                        resbar.Content = output;
-                        break;
+                case "FourBtn":
+                    input.Add("4");
+                    output = string.Join("", input.ToArray()).ToString();
+                    result = double.Parse(output);
+                    resbar.Content = output;
+                    break;
 
-                    case "ThreeBtn":
-                        input.Add("3");
-                        output = string.Join("", input);
-                        result = double.Parse(output);
-                        resbar.Content = output;
-                        break;
+                case "FiveBtn":
+                    input.Add("5");
+                    output = string.Join("", input.ToArray()).ToString();
+                    result = double.Parse(output);
+                    resbar.Content = output;
+                    break;
 
-                    case "FourBtn":
-                        input.Add("4");
-                        output = string.Join("", input);
-                        result = double.Parse(output);
-                        resbar.Content = output;
-                        break;
+                case "SixBtn":
+                    input.Add("6");
+                    output = string.Join("", input.ToArray()).ToString();
+                    result = double.Parse(output);
+                    resbar.Content = output;
+                    break;
 
-                    case "FiveBtn":
-                        input.Add("5");
-                        output = string.Join("", input);
-                        result = double.Parse(output);
-                        resbar.Content = output;
-                        break;
+                case "SevenBtn":
+                    input.Add("7");
+                    output = string.Join("", input.ToArray()).ToString();
+                    result = double.Parse(output);
+                    resbar.Content = output;
+                    break;
 
-                    case "SixBtn":
-                        input.Add("6");
-                        output = string.Join("", input);
-                        result = double.Parse(output);
-                        resbar.Content = output;
-                        break;
+                case "EightBtn":
+                    input.Add("8");
+                    output = string.Join("", input.ToArray()).ToString();
+                    result = double.Parse(output);
+                    resbar.Content = output;
+                    break;
 
-                    case "SevenBtn":
-                        input.Add("7");
-                        output = string.Join("", input);
-                        result = double.Parse(output);
-                        resbar.Content = output;
-                        break;
-
-                    case "EightBtn":
-                        input.Add("8");
-                        output = string.Join("", input);
-                        result = double.Parse(output);
-                        resbar.Content = output;
-                        break;
-
-                    case "NineBtn":
-                        input.Add("9");
-                        output = string.Join("", input);
-                        result = double.Parse(output);
-                        resbar.Content = output;
-                        break;
-                }
+                case "NineBtn":
+                    input.Add("9");
+                    output = string.Join("", input.ToArray()).ToString();
+                    result = double.Parse(output);
+                    resbar.Content = output;
+                    break;
             }
         }
         public void ACButtonClick(object sender, RoutedEventArgs e)
