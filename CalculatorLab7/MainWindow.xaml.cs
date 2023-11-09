@@ -171,40 +171,43 @@ namespace CalculatorLab7
         }
         public void EqualsButtonClick(object sender, RoutedEventArgs e)
         {
-            double output = 0;
-            switch (selectedOperator)
-            {
-                case SelectedOperator.Addition:
-                    double valAdd = result;
-                    output = MathService.Add(lastNumber, valAdd);
-                    break;
+            
+                double output = 0;
+                switch (selectedOperator)
+                {
+                    case SelectedOperator.Addition:
+                        double valAdd = result;
+                        output = MathService.Add(lastNumber, valAdd);
+                        break;
 
-                case SelectedOperator.Substraction:
-                    double valMinus = result;
-                    output = MathService.Subtract(lastNumber, valMinus);
-                    break;
+                    case SelectedOperator.Substraction:
+                        double valMinus = result;
+                        output = MathService.Subtract(lastNumber, valMinus);
+                        break;
 
-                case SelectedOperator.Multiplication:
-                    double valMult = result;
-                    output = MathService.Multiply(lastNumber, valMult);
-                    break;
+                    case SelectedOperator.Multiplication:
+                        double valMult = result;
+                        output = MathService.Multiply(lastNumber, valMult);
+                        break;
 
-                case SelectedOperator.Division:
-                    double valDiv = result;
-                    if(valDiv != 0) 
-                    {
-                        output = MathService.Divide(lastNumber, valDiv);
+                    case SelectedOperator.Division:
+                        double valDiv = result;
+                        if (valDiv != 0)
+                        {
+                            output = MathService.Divide(lastNumber, valDiv);
+                        }
+                        if(valDiv == 0)
+                        {
+                        string message = "sorry, this operation cannot be performed unless we break the laws of mathematics";
+                        string title = "ERROR";
+                        MessageBox.Show(message, title);
                     }
-                    else
-                    {
-                        resbar.Content = "Cannot divide by zero";
-                    }
-                    break;
-                default:
-                    break;
-            }
-            resbar.Content = output.ToString();
-
+                        break;
+                    default:
+                        break;
+                }
+                resbar.Content = output.ToString();
+       
         }
         }
 }
