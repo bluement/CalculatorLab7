@@ -40,8 +40,12 @@
         <Button Content="+" Click="OperationBtnClick" Tag="Addition" Grid.Row="4" Grid.Column="3" Margin="10"/>
         <Button Content="=" x:Name="equalsButton" Grid.Row="5" Grid.Column="3" Margin="10"/>
         <Button Content="." x:Name="dotButton" Grid.Row="5" Grid.Column="2" Margin="10"/>
+        
+        <Label Content="" x:Name="resbar" Grid.ColumnSpan="4"  FontSize="24" FontFamily="Algerian" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom"
+               Foreground = "White"/>
        
-        <Label Content="" x:Name="resbar" Grid.ColumnSpan="4" FontSize="24" FontFamily="Algerian" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom"/>
-
     </Grid>
+    <Window.Background>
+        <ImageBrush ImageSource="C:\Users\bluel\source\repos\CalculatorLab7\CalculatorLab7\bin\RAHHHHHHHHH.jpg" Stretch="Fill" />
+    </Window.Background>
 </Window>
