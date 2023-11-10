@@ -68,7 +68,13 @@ namespace CalculatorLab7
             double number = double.Parse(resbar.Content.ToString());
             if (number != 0)
             {
-                resbar.Content = (number /100).ToString();
+                double percentage = number / 100;
+                result = (lastNumber * percentage);
+                resbar.Content = result.ToString();
+                if (lastNumber == 0)
+                {
+                    resbar.Content = number / 100;
+                }
             }
             if (number == 0)
             {
@@ -76,7 +82,7 @@ namespace CalculatorLab7
                 string title = "ERROR";
                 MessageBox.Show(message, title);
             }
-           
+
         }
         public void DotButtonClick(object sender, RoutedEventArgs e)
         {        
