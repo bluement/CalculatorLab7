@@ -68,7 +68,7 @@ namespace CalculatorLab7
             double number = double.Parse(resbar.Content.ToString());
             if (number != 0)
             {
-                resbar.Content = (number / 100).ToString();
+                resbar.Content = (number /100).ToString();
             }
             if (number == 0)
             {
