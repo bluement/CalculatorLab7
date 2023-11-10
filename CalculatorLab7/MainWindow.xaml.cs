@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -32,121 +33,45 @@ namespace CalculatorLab7
             plusMinusButton.Click += PlusMinusButtonClick;
             percentageButton.Click += PercentageButtonClick;
             dotButton.Click += DotButtonClick;
-
-
-
         }  
 
         private void NumInput(object sender, EventArgs e)
         {
-            string name = ((Button)sender).Name;
-            var input = new ArrayList();
-            string output;
+            
+            Button button = (Button)sender;
+            string digit = button.Content.ToString();
 
-
-            switch (name)
+            if(resbar.Content.ToString() == "0" && digit != "0")
             {
-                case "ZeroBtn":
-                    input.Add("0");
-                    
-                   output=  string.Join("",input.ToArray()).ToString();
-                    
-                    result = double.Parse(output);
-                    resbar.Content = result;
-                    break;
-
-                case "OneBtn":
-                    input.Add("1");
-                    output = string.Join("", input.ToArray()).ToString();
-                    result = double.Parse(output);
-                    resbar.Content = result;
-                    break;
-
-                case "TwoBtn":
-                    input.Add("2");
-                    output = string.Join("", input.ToArray()).ToString();
-                    result = double.Parse(output);
-                    resbar.Content = output;
-                    break;
-
-                case "ThreeBtn":
-                    input.Add("3");
-                    output = string.Join("", input.ToArray()).ToString();
-                    result = double.Parse(output);
-                    resbar.Content = output;
-                    break;
-
-                case "FourBtn":
-                    input.Add("4");
-                    output = string.Join("", input.ToArray()).ToString();
-                    result = double.Parse(output);
-                    resbar.Content = output;
-                    break;
-
-                case "FiveBtn":
-                    input.Add("5");
-                    output = string.Join("", input.ToArray()).ToString();
-                    result = double.Parse(output);
-                    resbar.Content = output;
-                    break;
-
-                case "SixBtn":
-                    input.Add("6");
-                    output = string.Join("", input.ToArray()).ToString();
-                    result = double.Parse(output);
-                    resbar.Content = output;
-                    break;
-
-                case "SevenBtn":
-                    input.Add("7");
-                    output = string.Join("", input.ToArray()).ToString();
-                    result = double.Parse(output);
-                    resbar.Content = output;
-                    break;
-
-                case "EightBtn":
-                    input.Add("8");
-                    output = string.Join("", input.ToArray()).ToString();
-                    result = double.Parse(output);
-                    resbar.Content = output;
-                    break;
-
-                case "NineBtn":
-                    input.Add("9");
-                    output = string.Join("", input.ToArray()).ToString();
-                    result = double.Parse(output);
-                    resbar.Content = output;
-                    break;
+                resbar.Content = digit;
             }
+            else
+            {
+                resbar.Content = resbar.Content + digit;
+            }          
         }
         public void ACButtonClick(object sender, RoutedEventArgs e)
         {
             result = 0;
-            resbar.Content= result;
+            resbar.Content= "0";
+            lastNumber = 0;
         }
         
         public void PlusMinusButtonClick(object sender, RoutedEventArgs e)
         {
-            result *= -1;
-            resbar.Content= result;
+            double number = double.Parse(resbar.Content.ToString());
+            resbar.Content= (-number).ToString();
         }
         public void PercentageButtonClick(object sender, RoutedEventArgs e)
         {
-            if(result != 0)
-            {
-                result /= 100;
-                resbar.Content = result + "%";
-                
-            }
+            double number = double.Parse(resbar.Content.ToString());
+            resbar.Content= (number/100).ToString();
         }
         public void DotButtonClick(object sender, RoutedEventArgs e)
-        {
-            string resultString = result.ToString();
-            
-            if(!resultString.Contains("."))
+        {        
+            if(!resbar.Content.ToString().Contains("."))
             {
-                result = double.Parse(resultString + ".");
-                resbar.Content = result;
+                resbar.Content = resbar.Content + ".";
             }
         }
         public enum SelectedOperator
@@ -156,47 +81,47 @@ namespace CalculatorLab7
             Multiplication,
             Division
         }
+
+        private SelectedOperator GetSelectedOperator()
+        {
+            return selectedOperator;
+        }
+
         private void OperationBtnClick(object sender, RoutedEventArgs e)
         {
-            if(sender is Button button)
+            if (sender is Button button)
             {
-                if(Enum.TryParse(button.Tag.ToString(), out SelectedOperator selectedOperator)) 
+                if (Enum.TryParse(button.Tag.ToString(), out SelectedOperator selectedOperator))
                 {
+                    lastNumber = double.Parse(resbar.Content.ToString()) ;
                     this.selectedOperator = selectedOperator;
-                    lastNumber = result;
-                    result = 0;
                     resbar.Content = "";
                 }
             }
         }
         public void EqualsButtonClick(object sender, RoutedEventArgs e)
         {
-            
-                double output = 0;
+                 double newNumber = double.Parse(resbar.Content.ToString());
                 switch (selectedOperator)
                 {
                     case SelectedOperator.Addition:
-                        double valAdd = result;
-                        output = MathService.Add(lastNumber, valAdd);
+                        result = MathService.Add(lastNumber, newNumber);
                         break;
 
                     case SelectedOperator.Substraction:
-                        double valMinus = result;
-                        output = MathService.Subtract(lastNumber, valMinus);
+                    result = MathService.Subtract(lastNumber, newNumber);
                         break;
 
                     case SelectedOperator.Multiplication:
-                        double valMult = result;
-                        output = MathService.Multiply(lastNumber, valMult);
+                    result = MathService.Multiply(lastNumber, newNumber);
                         break;
 
                     case SelectedOperator.Division:
-                        double valDiv = result;
-                        if (valDiv != 0)
+                        if (newNumber != 0)
                         {
-                            output = MathService.Divide(lastNumber, valDiv);
+                        result = MathService.Divide(lastNumber, newNumber);
                         }
-                        if(valDiv == 0)
+                        if(newNumber == 0)
                         {
                         string message = "sorry, this operation cannot be performed unless we break the laws of mathematics";
                         string title = "ERROR";
@@ -206,8 +131,7 @@ namespace CalculatorLab7
                     default:
                         break;
                 }
-                resbar.Content = output.ToString();
-       
+                resbar.Content = result.ToString();
         }
         }
 }
