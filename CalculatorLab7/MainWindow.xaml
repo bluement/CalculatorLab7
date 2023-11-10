@@ -46,6 +46,6 @@
        
     </Grid>
     <Window.Background>
-        <ImageBrush ImageSource="C:\Users\bluel\source\repos\CalculatorLab7\CalculatorLab7\bin\RAHHHHHHHHH.jpg" Stretch="Fill" />
+        <ImageBrush ImageSource="bin/RAHHHHHHHHH.jpg" Stretch="Fill" />
     </Window.Background>
 </Window>
