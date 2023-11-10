@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -65,7 +66,17 @@ namespace CalculatorLab7
         public void PercentageButtonClick(object sender, RoutedEventArgs e)
         {
             double number = double.Parse(resbar.Content.ToString());
-            resbar.Content= (number/100).ToString();
+            if (number != 0)
+            {
+                resbar.Content = (number / 100).ToString();
+            }
+            if (number == 0)
+            {
+                string message = "sorry, this operation cannot be performed unless we break the laws of mathematics";
+                string title = "ERROR";
+                MessageBox.Show(message, title);
+            }
+           
         }
         public void DotButtonClick(object sender, RoutedEventArgs e)
         {        
